@@ -28,7 +28,7 @@ public class EmailController {
         datos.put("pedidoId", "1234");
         String contenido = emailService.generarHtmlCorreo(datos);
         logger.info(contenido);
-        return ResponseEntity.ok("Cmail created successfully");
+        return ResponseEntity.ok("Email created successfully");
     }
 
 }
