@@ -22,7 +22,7 @@ public class EmailController {
     }
 
     @PostMapping
-    public ResponseEntity<String> createEmail() {
+    public ResponseEntity<?> createEmail() {
 
         Map<String, Object> datos = new HashMap<>();
         datos.put("nombre", "Javi");
@@ -33,7 +33,7 @@ public class EmailController {
     }
 
     @GetMapping
-    public ResponseEntity sendEmail() throws MessagingException {
+    public ResponseEntity<?> sendEmail() throws MessagingException {
         emailService.sendEmail();
         return ResponseEntity.ok().build();
     }
