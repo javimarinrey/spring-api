@@ -1,5 +1,6 @@
 package org.example.springapi.controller;
 
+import jakarta.mail.MessagingException;
 import org.example.springapi.service.EmailService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -29,6 +30,12 @@ public class EmailController {
         String contenido = emailService.generarHtmlCorreo(datos);
         logger.info(contenido);
         return ResponseEntity.ok("Email created successfully");
+    }
+
+    @GetMapping
+    public ResponseEntity sendEmail() throws MessagingException {
+        emailService.sendEmail();
+        return ResponseEntity.ok().build();
     }
 
 }
